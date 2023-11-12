@@ -17,14 +17,18 @@ public abstract class DataStorage implements LaptopComponent {
             return switch (name) {
                 case "HDD" -> new HDD();
                 case "SSD" -> new SSD();
-                default -> null;
+                default -> {
+                    throw new IllegalArgumentException("Некорректный формат данных!");
+                }
             };
         }
         public static DataStorage createDataStorage(int choice) {
             return switch (choice) {
                 case 0 -> new HDD();
                 case 1 -> new SSD();
-                default -> null;
+                default -> {
+                    throw new IllegalArgumentException("Некорректный формат данных!");
+                }
             };
         }
     }
