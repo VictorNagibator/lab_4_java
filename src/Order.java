@@ -4,10 +4,10 @@ public class Order {
     private final int num;
     private Laptop laptop;
     private StatusType status;
-    private static int numOfOrders = 1; //количество заказов
+    private static int numOfOrders = 0; //количество заказов
 
     public Order() {
-        this.num = numOfOrders++;
+        this.num = ++numOfOrders;
         this.laptop = new Laptop();
         this.status = StatusType.ONHOLD;
     }
