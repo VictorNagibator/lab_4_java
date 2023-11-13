@@ -5,7 +5,7 @@ public class RAM implements LaptopComponent {
     private RAMType type = RAMType.DDR;
     private double frequency;
     private int capacity;
-    public final double tryFreq = 50f; //условное повышение частоты для разгона
+    public final double tryFreq = 50; //условное повышение частоты для разгона
     public final int[] DDRFreqMax = { 400, 1066, 2400, 3333, 6400 }; //массив максимально возможных частот для каждого типа памяти
 
     public RAM() { }
