@@ -17,7 +17,7 @@ public class Motherboard implements LaptopComponent {
         this.supportedRAMType = supportedRAMType;
     }
 
-    public String getComponentName() { return "Материнская плата"; };
+    public String getComponentName() { return "Материнская плата"; }
     public String getName() { return name; }
     public String getSocket() { return socket; }
     public String getChipset() { return chipset; }

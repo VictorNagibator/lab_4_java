@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Order {
-    private int num;
+    private final int num;
     private Laptop laptop;
     private StatusType status;
     private static int numOfOrders = 1; //количество заказов

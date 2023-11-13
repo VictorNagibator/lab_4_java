@@ -12,23 +12,20 @@ public abstract class DataStorage implements LaptopComponent {
         tryToSetArguments(capacity, transferInterface, brand, formFactor);
     }
 
+    //вспомогательный класс "фабрика" объектов DataStorage
     static class DataStorageFactory {
         public static DataStorage createDataStorage(String name) {
             return switch (name) {
                 case "HDD" -> new HDD();
                 case "SSD" -> new SSD();
-                default -> {
-                    throw new IllegalArgumentException("Некорректный формат данных!");
-                }
+                default -> throw new IllegalArgumentException("Некорректный формат данных!");
             };
         }
         public static DataStorage createDataStorage(int choice) {
             return switch (choice) {
                 case 0 -> new HDD();
                 case 1 -> new SSD();
-                default -> {
-                    throw new IllegalArgumentException("Некорректный формат данных!");
-                }
+                default -> throw new IllegalArgumentException("Некорректный формат данных!");
             };
         }
     }
@@ -50,6 +47,7 @@ public abstract class DataStorage implements LaptopComponent {
         capacity = scan.nextInt();
         System.out.print("Введите интерфейс подключения (PATA - 0, SATA - 1, SAS - 2, NVMe - 3): ");
         type = DataTransferInterface.intToDataTransferInterface(scan.nextInt());
+        scan.nextLine(); //очистка потока
         System.out.print("Введите производителя: ");
         brand = scan.nextLine();
         System.out.print("Введите форм фактор (в дюймах): ");

@@ -11,7 +11,7 @@ public class Display implements LaptopComponent {
         tryToSetArguments(width, height, refreshRate);
     }
 
-    public String getComponentName() { return "Экран"; };
+    public String getComponentName() { return "Экран"; }
     public int getWidth() { return width; }
     public int getHeight() { return height; }
     public int getRefreshRate() { return refreshRate; }

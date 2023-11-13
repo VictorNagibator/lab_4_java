@@ -19,7 +19,7 @@ public class RAM implements LaptopComponent {
         tryToSetArguments(name, type, frequency, capacity);
     }
 
-    public String getComponentName() { return "RAM"; };
+    public String getComponentName() { return "RAM"; }
     public String getName() { return name; }
     public RAMType getRAMType() { return type; }
     public double getFrequency() { return frequency; }

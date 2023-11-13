@@ -3,7 +3,7 @@ public enum StatusType {
     INPROCCESS ("В ремонте"),
     FINISHED ("Готов");
 
-    private String name;
+    private final String name;
 
     StatusType(String name) {
         this.name = name;
@@ -14,15 +14,11 @@ public enum StatusType {
     }
 
     public static StatusType intToStatusType (int intType) {
-        switch (intType){
-            case 0:
-                return ONHOLD;
-            case 1:
-                return INPROCCESS;
-            case 2:
-                return FINISHED;
-            default:
-                throw new IllegalArgumentException("Некорректный формат данных!");
-        }
+        return switch (intType) {
+            case 0 -> ONHOLD;
+            case 1 -> INPROCCESS;
+            case 2 -> FINISHED;
+            default -> throw new IllegalArgumentException("Некорректный формат данных!");
+        };
     }
 }

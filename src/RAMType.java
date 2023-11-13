@@ -5,7 +5,7 @@ public enum RAMType {
     DDR4 ("DDR4"),
     DDR5 ("DDR5");
 
-    private String name;
+    private final String name;
 
     RAMType(String name) {
         this.name = name;
@@ -16,19 +16,13 @@ public enum RAMType {
     }
 
     public static RAMType intToRAMType (int intType) {
-        switch (intType){
-            case 0:
-                return DDR;
-            case 1:
-                return DDR2;
-            case 2:
-                return DDR3;
-            case 3:
-                return DDR4;
-            case 4:
-                return DDR5;
-            default:
-                throw new IllegalArgumentException("Некорректный формат данных!");
-        }
+        return switch (intType) {
+            case 0 -> DDR;
+            case 1 -> DDR2;
+            case 2 -> DDR3;
+            case 3 -> DDR4;
+            case 4 -> DDR5;
+            default -> throw new IllegalArgumentException("Некорректный формат данных!");
+        };
     }
 }

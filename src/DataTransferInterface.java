@@ -4,7 +4,7 @@ public enum DataTransferInterface {
     SAS("SAS"),
     NVME("NVME");
 
-    private String name;
+    private final String name;
 
     DataTransferInterface(String name) {
         this.name = name;
@@ -15,17 +15,12 @@ public enum DataTransferInterface {
     }
 
     public static DataTransferInterface intToDataTransferInterface (int intType) {
-        switch (intType){
-            case 0:
-                return PATA;
-            case 1:
-                return SATA;
-            case 2:
-                return SAS;
-            case 3:
-                return NVME;
-            default:
-                throw new IllegalArgumentException("Некорректный формат данных!");
-        }
+        return switch (intType) {
+            case 0 -> PATA;
+            case 1 -> SATA;
+            case 2 -> SAS;
+            case 3 -> NVME;
+            default -> throw new IllegalArgumentException("Некорректный формат данных!");
+        };
     }
 }

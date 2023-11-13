@@ -13,7 +13,7 @@ public class GPU implements LaptopComponent {
         tryToSetArguments(name, frequency, vram);
     }
 
-    public String getComponentName() { return "GPU"; };
+    public String getComponentName() { return "GPU"; }
     public String getName() { return name; }
     public double getFrequency() { return frequency; }
     public int getVRAM() { return vram; }

@@ -55,7 +55,7 @@ public class Laptop {
         this.motherboard = motherboard;
 
         //если сокеты не совпадают, то старый процессор убираем
-        if (this.cpu.getSocket() != motherboard.getSocket()) { this.cpu = new CPU(); }
+        if (!this.cpu.getSocket().equals(motherboard.getSocket())) { this.cpu = new CPU(); }
         //если не совпадают типы оперативной памяти, то старую память убираем, а новую ставим с таким же типом
         if (this.ram.getRAMType() != motherboard.getSupportedRAMType()) { this.ram = new RAM(motherboard.getSupportedRAMType()); }
     }

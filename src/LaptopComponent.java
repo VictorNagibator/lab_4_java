@@ -1,4 +1,4 @@
 public interface LaptopComponent {
-    public String getComponentName();
-    public void input();
+    String getComponentName();
+    void input();
 }
